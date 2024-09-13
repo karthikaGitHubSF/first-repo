@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>check</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+     $Profile.Name = &#39;Sales&#39;,
+    ISCHANGED(StageName),
+     TEXT(PRIORVALUE( StageName ) )=&#39;Prospecting&#39;, 
+    ISPICKVAL(StageName, &quot;Qualification&quot;)
+)</errorConditionFormula>
+    <errorMessage>check ok</errorMessage>
+</ValidationRule>
